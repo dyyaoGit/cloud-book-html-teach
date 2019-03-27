@@ -1,0 +1,33 @@
+@import './px2-rem.scss';
+
+body {
+  font-size: 14px!important;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+.container {
+  padding: px-to-rem(18);
+}
+
