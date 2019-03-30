@@ -8,6 +8,7 @@ import '@/globalCss/init.scss' // 引入自己的初始化样式
 import 'amfe-flexible/index' // 引入淘宝适配方案
 import {fetch} from '@/utils/index' // 引入封装好的axios
 import api from '@/utils/api' // 引入所有的api
+// import './iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = fetch // 挂载axios在vue实例上

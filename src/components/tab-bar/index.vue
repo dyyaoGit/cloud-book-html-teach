@@ -30,6 +30,16 @@
       return {
         selected: 'index'
       }
+    },
+    watch: {
+      selected (val) {
+        this.$router.push({
+          name: val
+        })
+      }
+    },
+    created () {
+      this.selected = this.$route.name
     }
   }
 </script>

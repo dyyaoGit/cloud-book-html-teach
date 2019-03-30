@@ -17,6 +17,14 @@ const router = new Router({
             title: '首页'
           },
           component: () => import('@/views/index')
+        },
+        {
+          path: 'person',
+          name: 'person',
+          meta: {
+            title: '个人中心'
+          },
+          component: () => import('@/views/person')
         }
       ]
     },

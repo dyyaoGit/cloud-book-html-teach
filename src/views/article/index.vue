@@ -4,18 +4,20 @@
     <div class="content markdown" :style="{fontSize: fontSize + 'px'}" v-html="html"></div>
     <div class="btns">
       <i class="iconfont icon-prev" @click="handleJump('prev')"></i>
-      <i class="iconfont icon-mulu" @click="isShowTitles = true"></i>
+      <i class="iconfont icon-mulu" @click="showTitles" ></i>
       <i class="iconfont icon-zitifangda" @click="handleAdd"></i>
       <i class="iconfont icon-zitisuoxiao" @click="handleReduce"></i>
       <i class="iconfont icon-next" @click="handleJump('next')"></i>
     </div>
-    
-    <div class="title-wrap" :class="{active: isActive}"  @click="isShowTitles = false">
-      <ul class="titles" :class="{active: isActive}" @click.stop>
-        <li v-for="(item, index) in titles" :key="index" class="title-item">
-          {{item.title}}
-        </li>
-      </ul>
+
+    <div class="title-wrap" v-show="isShowTitles"  @click="hideTitles">
+      <transition name="slide">
+        <ul class="titles" v-show="isActive"  @click.stop>
+          <li v-for="(item, index) in titles" :key="index" class="title-item">
+            {{item.title}}
+          </li>
+        </ul>
+      </transition>
     </div>
   </div>
 </template>
@@ -75,6 +77,12 @@
           const item = _this.titles.find(item => item.index == _this.index)
           const id = item._id
           _this.getArticle(id)
+          _this.$router.push({
+            name: 'article',
+            params: {
+              id
+            }
+          })
         }
 
         if(isPrev == 'prev'){
@@ -98,6 +106,16 @@
             getArticleByIndex()
           }
         }
+      },
+      showTitles () {
+        this.isShowTitles = true
+        this.isActive = true
+      },
+      hideTitles () {
+        this.isActive = false
+        setTimeout(() => {
+          this.isShowTitles = false
+        }, 500)
       }
     },
     created () {
@@ -108,13 +126,6 @@
       this.getArticle().then(() => {
         this.getTitles()
       })
-    },
-    watch: {
-      isShowTitles (val) {
-        this.$nextTick(() => {
-          this.isActive = val;
-        })
-      }
     }
   }
 </script>
@@ -141,27 +152,22 @@
       line-height: 42px;
     }
   }
-  
+
   .title-wrap {
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: -10;
     background: rgba(0,0,0,.5);
-    
+
     .titles {
       position: fixed;
       top: 0;
       bottom: 0;
       left: 0;
-      z-index: -10;
-      transition: all ease 1s;
-      transform: translate3d(-100%,0,0);
       width: 60%;
       height: 100%;
-      transform: translate3d(0,0,0);
       background: #fff;
       color: #000;
 
@@ -169,15 +175,13 @@
         padding: 10px;
         border-bottom: 1px solid #eee;
       }
-
     }
 
-    .active {
-      transform: translate3d(0,0,0);
+    .slide-enter, .slide-leave-to {
+      transform: translate3d(-100%, 0, 0);
     }
-
-    &.active {
-      z-index: 998;
+    .slide-enter-active, .slide-leave-active {
+      transition: transform .5s ease;
     }
   }
 </style>

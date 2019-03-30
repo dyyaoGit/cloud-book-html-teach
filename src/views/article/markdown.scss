@@ -3,6 +3,8 @@
     color: #111111;
     font-weight: 400;
     margin-top: 1em;
+    white-space: normal;
+    word-break: break-all;
   }
   h1, h2, h3, h4, h5 {
     font-family: Georgia, Palatino, serif;
@@ -83,6 +85,8 @@
     overflow: auto;
     padding: 6px 10px;
     border-left: 5px solid #ccc;
+    white-space: normal;
+    word-break: break-all;
   }
   pre > code {
     font-family: Consolas, Monaco, Andale Mono, monospace;
@@ -99,6 +103,8 @@
   }
   code {
     color: #444;
+    white-space: normal;
+    word-break: break-all;
   }
   aside {
     display: block;
