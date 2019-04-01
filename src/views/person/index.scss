@@ -57,6 +57,10 @@ $background: #186fc8;
       }
     }
   }
+  .user-box {
+    flex-direction: row-reverse;
+    justify-content: flex-end
+  }
 
   .read-data {
     margin-top: 40px;
@@ -148,6 +152,10 @@ $background: #186fc8;
         color: #e0e0e0;
       }
     }
+  }
+  .btn-wrap {
+    margin-top: 40px;
+    padding: px-to-rem(18)
   }
 
 }

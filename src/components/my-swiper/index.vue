@@ -53,6 +53,7 @@
   .swiper-img-wrap {
     display: block;
     width: 100%;
+    height: px-to-rem(400);
     position: relative;
     color: rgba(255,255,255,.9);
     text-decoration: none;

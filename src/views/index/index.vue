@@ -2,6 +2,8 @@
   <div class="container">
     <Loadmore :top-method="loadTop"
               ref="loadmore"
+              :autoFill="false"
+              bottomPullText="上拉加载更多数据"
               :bottom-all-loaded="allLoaded"
               :bottom-method="loadBottom">
       <MySwiper />
@@ -64,9 +66,10 @@
       loadTop () {
         this.queryData = {
           pn: 1,
-          booksSize: 4,
-          size: 4
+          booksSize: 2,
+          size: 2
         }
+        this.contentData = []
         this.allLoaded = false
         this.getContent().then(() => {
           this.$refs.loadmore.onTopLoaded()
@@ -81,7 +84,6 @@
         this.getContent().then(() => {
           this.$refs.loadmore.onBottomLoaded()
         })
-
       }
     },
     created () {

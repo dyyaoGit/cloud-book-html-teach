@@ -29,28 +29,51 @@ const router = new Router({
       ]
     },
     {
-      path: '/details/:id',
-      name: 'details',
-      component: () => import('@/views/details'),
-      meta: {
-        title: '书籍详情'
-      }
+      path: 'layout2',
+      name: 'header-layout',
+      component: () => import('@/views/header-layout'),
+      children: [
+        {
+          path: '/details/:id',
+          name: 'details',
+          component: () => import('@/views/details'),
+          meta: {
+            title: '书籍详情'
+          }
+        },
+        {
+          path: '/titles/:id',
+          name: 'titles',
+          meta: {
+            title: '目录'
+          },
+          component: () => import('@/views/titles')
+        },
+        {
+          path: '/article/:id',
+          name: 'article',
+          meta: {
+            title: '文章详情'
+          },
+          component: () => import('@/views/article')
+        }
+      ]
     },
     {
-      path: '/titles/:id',
-      name: 'titles',
+      path: '/login',
+      name: 'login',
       meta: {
-        title: '目录'
+        title: '登录'
       },
-      component: () => import('@/views/titles')
+      component: () => import('@/views/login')
     },
     {
-      path: '/article/:id',
-      name: 'article',
+      path: '/register',
+      name: 'register',
       meta: {
-        title: '文章详情'
+        title: '注册'
       },
-      component: () => import('@/views/article')
+      component: () => import('@/views/register')
     }
   ]
 })
