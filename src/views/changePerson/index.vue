@@ -13,7 +13,7 @@
         </hs-upload>
       </li>
       <li class="user-msg-item">
-        <router-link class="item-content" to="#">
+        <router-link class="item-content" to="/changeNickname">
           <div class="item-left">
             昵称
           </div>
@@ -39,7 +39,7 @@
         </router-link>
       </li>
       <li class="user-msg-item">
-        <router-link class="item-content" to="#">
+        <router-link class="item-content" to="/changePassword">
           <div class="item-left">
             修改密码
           </div>

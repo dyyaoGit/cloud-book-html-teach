@@ -8,7 +8,9 @@ const apiObj = {
   sendCode: '/phoneValidator', // 发送短信验证码
   register: '/register', // 注册
   getUserData: '/user', // 获取用户数据
-  changeUser: '/user', // 修改用户 信息
+  changeUser: '/user', // 修改用户信息
+  changePassword: '/changePassword', // 修改密码
+  getReadList: '/readList'
 }
 
 export default apiObj

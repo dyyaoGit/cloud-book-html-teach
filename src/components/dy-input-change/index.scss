@@ -1,0 +1,19 @@
+.dy-change-input {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #0099ff;
+  margin-bottom: 20px;
+
+  .input {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 4px 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  .title {
+    color: #555;
+    font-size: 14px;
+  }
+}
