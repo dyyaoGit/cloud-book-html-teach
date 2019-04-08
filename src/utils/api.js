@@ -8,10 +8,7 @@ const apiObj = {
   sendCode: '/phoneValidator', // 发送短信验证码
   register: '/register', // 注册
   getUserData: '/user', // 获取用户数据
+  changeUser: '/user', // 修改用户 信息
 }
 
-const baseURI = process.env.NODE_ENV == 'production'?'/': '/api';
-for(let key in apiObj){
-  apiObj[key] = baseURI + apiObj[key]
-}
 export default apiObj

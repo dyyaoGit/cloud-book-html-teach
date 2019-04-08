@@ -63,12 +63,14 @@ flex-direction: row-reverse;justify-content: flex-end">
 
     <div class="menu-wrap">
       <ul class="menu">
-        <li class="menu-item">
-          <div class="menu-item-left">
-            <i class="iconfont icon-xiugaigerenxinxi"></i>
-            <span class="menu-item-title">修改个人信息</span>
-          </div>
-          <i class="iconfont icon-youbian"></i>
+        <li>
+          <router-link class="menu-item" to="/changePerson">
+            <div class="menu-item-left">
+              <i class="iconfont icon-xiugaigerenxinxi"></i>
+              <span class="menu-item-title">修改个人信息</span>
+            </div>
+            <i class="iconfont icon-youbian"></i>
+          </router-link>
         </li>
         <li class="menu-item">
           <div class="menu-item-left">

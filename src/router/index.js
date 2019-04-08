@@ -56,6 +56,14 @@ const router = new Router({
             title: '文章详情'
           },
           component: () => import('@/views/article')
+        },
+        {
+          path: '/changePerson',
+          name: 'changePerson',
+          meta: {
+            title: '修改个人信息'
+          },
+          component: () => import('@/views/changePerson')
         }
       ]
     },
@@ -74,6 +82,14 @@ const router = new Router({
         title: '注册'
       },
       component: () => import('@/views/register')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      meta: {
+        title: '测试专用页面'
+      },
+      component: () => import('@/views/test')
     }
   ]
 })

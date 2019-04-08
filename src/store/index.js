@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import {fetch} from '../utils/index'
 import api from '../utils/api'
+import vuexPerisisted from 'vuex-persistedstate'
+import user from './user'
 
 Vue.use(Vuex)
 
@@ -26,7 +28,14 @@ const store = new Vuex.Store({
         })
       })
     }
-  }
+  },
+  plugins: [vuexPerisisted({
+    storage: {
+      getItem: key => sessionStorage.getItem(key),
+      setItem: (key, value) =>
+        sessionStorage.setItem(key, value),
+      removeItem: key => sessionStorage.removeItem(key),
+    },})]
 })
 
 export default store

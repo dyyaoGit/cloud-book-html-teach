@@ -2,7 +2,7 @@ import axios from 'axios'
 import router from '../router'
 
 const fetch = axios.create({
-  baseURL: '/'
+  baseURL: process.env.BASE_URL
 })
 fetch.interceptors.request.use((config) => {
   let token = localStorage.getItem('token')

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--cookie--> 浏览器上的一块空间，每次发送请求的时候会带上所有的cookie 通常很小，在古代，cookie，每个浏览器大约能存储50条。一般来说是4k；有过期时间。
+<!--localstorage--> 浏览器上的一块空间，每次请求不会带，没有过期时间，永久存储。空间极大。大约非5m。
+<!--sessionStorage--> 浏览器上的一块空间，每次请求不会带，有过期时间（没有过期时间），页面关闭的时候，就过期。只有关闭浏览器这个应用才回完全删除sessionStorage
+</body>
+<script>
+  // 存储
+  // localStorage.setItem('name', '力宏')
+
+  // 获取
+  console.log(localStorage.getItem('name'));
+
+  // 删除
+  localStorage.removeItem('name')
+  console.log(localStorage.getItem('name'));
+
+</script>
+</html>

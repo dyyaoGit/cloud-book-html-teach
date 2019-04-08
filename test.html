@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form action="https://upload-z1.qiniup.com" method="post" enctype="multipart/form-data">-->
+  <!--<input type="file" name="file">-->
+  <!--<input type="hidden" name="token" value="hiaSMM1QqBT-0Q0KywiDrpp_tXbgBz8p1mFXkoil:srtIp7QC52ML4_1syFzfQc5H0gA=:eyJyZXR1cm5Cb2R5Ijoie1wia2V5XCI6ICQoa2V5KSwgXCJoYXNoXCI6ICQoZXRhZyksIFwidXJsXCI6IFwiaHR0cDovL3BibC55YW9qdW5yb25nLmNvbS8kKGtleSlcIn0iLCJzY29wZSI6InB1YmxpYyIsImRlYWRsaW5lIjoxNTU0NjkxOTI1fQ==">-->
+  <!--<button>提交</button>-->
+<!--</form>-->
+<form action="#" id="form">
+  <input type="file" id="file">
+</form>
+<img alt="" id="img">
+<button id="btn">上传</button>
+</body>
+<script src="./axios.js"></script>
+<script>
+  var form = document.querySelector('#form');
+  var file = document.querySelector('#file');
+  var token = "";
+  var img = document.querySelector('#img')
+  // var btn = document.querySelector('#btn');
+
+  axios.get('http://upload.yaojunrong.com/getToken').then(res => {
+    token = res.data.data
+  })
+
+  file.onchange = function (event) {
+    console.log(event.target.files)
+    var file = event.target.files[0];
+    var form = new FormData()
+    form.append('file', file)
+    form.append('token', token)
+
+    axios.post('https://upload-z1.qiniup.com', form).then(res => {
+      var url = res.data.url
+      img.src=url;
+    })
+  }
+
+</script>
+</html>

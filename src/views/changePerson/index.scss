@@ -1,0 +1,40 @@
+@import '../../globalCss/px2-rem';
+
+.changePerson {
+  padding: 40px 0 px-to-rem(18) 0;
+  min-height: 100vh;
+  background: #f1f1f1;
+
+  ul {
+    padding-left: px-to-rem(18);
+    background: #fff;
+    border-bottom: 1px solid #eee;
+
+    li:last-child {
+      .item-content {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    padding-right: px-to-rem(18);
+
+    .item-right {
+      display: flex;
+      align-items: center;
+
+      .img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
